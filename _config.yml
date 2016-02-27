@@ -1,0 +1,26 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Oscerd
+tagline:          'Test'
+description:      'Thoughts of a programmer'
+url:              http://hyde.getpoole.com
+baseurl:          /
+
+author:
+  name:           'Andrea Cosentino'
+  url:            https://twitter.com/oscerd2
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/oscerd/oscerd.github.io
