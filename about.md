@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-I'm Andrea Cosentino and I work for Red Hat in the Jboss Fuse Team
+I'm Andrea Cosentino and I work for Red Hat in the JBoss Fuse Team
 
 * Apache Camel PMC Member
 * Apache Karaf Committer
