@@ -7,7 +7,7 @@ permalink:        pretty
 relative_permalinks: true
 
 # Setup
-title:            
+title:            Software Blog 
 tagline:          'Open source'
 description:      'Thoughts about programming, open source and more'
 url:              http://oscerd.github.io
