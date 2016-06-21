@@ -12,3 +12,9 @@ I'm Andrea Cosentino and I work for Red Hat in the JBoss Fuse Team
 
 This is just a personal blog about open source, programming and more
 
+You can find me on:
+
+- [Github](https://github.com/oscerd)
+- [Twitter](https://twitter.com/oscerd2)
+
+
