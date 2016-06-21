@@ -8,9 +8,9 @@ relative_permalinks: true
 
 # Setup
 title:            Oscerd
-tagline:          'Test'
-description:      'Thoughts of a programmer'
-url:              http://hyde.getpoole.com
+tagline:          'Open source'
+description:      'Thoughts about programming, open source and more'
+url:              http://oscerd.github.io
 baseurl:          /
 
 author:
