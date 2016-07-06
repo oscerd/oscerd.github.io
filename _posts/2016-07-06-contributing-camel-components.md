@@ -9,7 +9,7 @@ With this post I'd like to show you how you can do this step-by-step.
 
 ### A simple component
 
-In this guide I will add a simple component: camel-square. This is just a simple example, just to show the steps needed for integrating and contributing your component to Apache Camel codebase.
+In this guide I will add a simple component: camel-square. This is just a simple example, useful to show the steps needed for integrating and contributing your component to Apache Camel codebase.
 
 ### Using the Archetype
 
@@ -31,7 +31,7 @@ Generate the skeleton for the camel-square component
 
 You will be asked for the version of the component and other things in interactive way. Since the camel version currently in development is 2.18, use 2.18-SNAPSHOT as version of your component.
 
-### Cleaning up the component
+### Cleaning up the generated component
 
 First thing to do is cleaning the pom of the newly generated component a bit. So:
 
