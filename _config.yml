@@ -21,5 +21,8 @@ paginate:         5
 # Custom vars
 version:          2.1.0
 
+gems:
+  - jekyll-seo-tag
+
 github:
   repo:           https://github.com/oscerd/oscerd.github.io
