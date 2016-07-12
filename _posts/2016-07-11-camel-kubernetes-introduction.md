@@ -306,7 +306,7 @@ Pod name router-1-dkjsb with status Running
 
 As you can see the returned pods are 13 in my environment and all of them are in Running status.
 
-### Conclusion
+### Conclusions
 
 This post was just a little introduction on what Camel-Kubernetes can do. I think the most interesting part is the consumer side anyway. I will focus on the different types of consumer in one of next Camel related post. Meanwhile please try the component yourself and if you find something wrong, you think something can be improved or you think there is something else we can focus on, don't hesitate and post on [Camel Dev mailing list](http://camel.465427.n5.nabble.com/Camel-Development-f479097.html) or on the [Camel Users mailing list](http://camel.465427.n5.nabble.com/Camel-Users-f465428.html), or, if you are sure there is a bug or you think an improvement is truly needed, raise a JIRA on [Apache Camel JIRA](https://issues.apache.org/jira/browse/CAMEL/). 
 You can find examples of different operations you can do with Producer Endpoints and Consumer Endpoints in the [Component unit test](https://github.com/apache/camel/tree/master/components/camel-kubernetes/src/test).
