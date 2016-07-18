@@ -25,6 +25,7 @@ version:          2.1.0
 
 gems:
   - jekyll-seo-tag
+  - jekyll-feed
 
 github:
   repo:           https://github.com/oscerd/oscerd.github.io
