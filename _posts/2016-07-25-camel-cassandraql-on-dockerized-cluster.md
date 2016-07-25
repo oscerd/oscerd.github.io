@@ -172,4 +172,4 @@ As you may see we are using a Quorum Consistency Level for both the select and i
 
 Using Docker to spin up a Cassandra Cluster can be useful during integration and performance testing. In this post we saw a little example of the camel-cassandraql features in a real Apache Cassandra cluster.
 
-Before the camel-cassandraql Pull Request submission, I was working on a Camel-Cassandra too. This component is a bit different from the cassandraql one and you can find more information in the [Github Repository](https://github.com/oscerd/camel-cassandra). It is aligned with the latest Apache Camel released version 2.17.2.
+Before the camel-cassandraql Pull Request submission, I was working on a Camel-Cassandra component too. This component is a bit different from the cassandraql one and you can find more information in the [Github Repository](https://github.com/oscerd/camel-cassandra). It is aligned with the latest Apache Camel released version 2.17.2.
