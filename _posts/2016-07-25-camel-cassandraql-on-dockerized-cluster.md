@@ -15,7 +15,7 @@ As first step we will need to run a single node cluster:
 docker run --name master_node -dt oscerd/cassandra
 ```
 
-This command will run a single container with an Apache Cassandra instance (the Cassandra version is the one of latest tick-tock release, the 3.6). We could use a single-node cluster but in this way we won't exploit the Cassandra features. So let's add two other nodes!
+This command will run a single container with an Apache Cassandra instance (the Cassandra version is the one of latest tick-tock releases, the 3.6). We could use a single-node cluster but in this way we won't exploit the Cassandra features. So let's add two other nodes!
 
 ```
 docker run --name node1 -d -e SEED="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' master_node)" oscerd/cassandra
