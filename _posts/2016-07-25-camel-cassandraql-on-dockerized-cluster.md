@@ -22,7 +22,7 @@ docker run --name node1 -d -e SEED="$(docker inspect --format='{{ .NetworkSettin
 docker run --name node2 -d -e SEED="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' master_node)" oscerd/cassandra
 ```
 
-Now we have two other nodes in our Cluster. The environment variable SEED will be used to make the node aware of, at least, one of the nodes in the Cluster. In the cassandra.yaml file there will be a `seeds` entry to track this information. More informations can be found in the [Cassandra documentation](http://docs.datastax.com/en/cassandra/3.x/cassandra/initialize/initSingleDS.html).
+Now we have two other nodes in our Cluster. The environment variable SEED will be used to make the node aware of, at least, one of the nodes in the Cluster. In the `cassandra.yaml` file there will be a `seeds` entry to track this information. More informations can be found in the [Cassandra documentation](http://docs.datastax.com/en/cassandra/3.x/cassandra/initialize/initSingleDS.html).
 To be sure everything is up and running we need to use the [Nodetool utility](http://docs.datastax.com/en/cassandra/3.x/cassandra/tools/toolsNodetool.html), by running the following command:
 
 ```
@@ -171,3 +171,5 @@ As you may see we are using a Quorum Consistency Level for both the select and i
 ### Conclusions
 
 Using Docker to spin up a Cassandra Cluster can be useful during integration and performance testing. In this post we saw a little example of the camel-cassandraql features in a real Apache Cassandra cluster.
+
+Before the camel-cassandraql Pull Request submission, I was working on a Camel-Cassandra too. This component is a bit different from the cassandraql one and you can find more information in the [Github Repository](https://github.com/oscerd/camel-cassandra). It is aligned with the latest Apache Camel released version 2.17.2.
