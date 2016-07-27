@@ -149,6 +149,7 @@ cqlsh:test>
 
 The route of the example is simple:
 
+{% raw %}
 ```java
     @ContextName("camel-example-cassandraql-cdi")
     static class KubernetesRoute extends RouteBuilder {
@@ -165,6 +166,7 @@ The route of the example is simple:
         }
     }
 ```
+{% endraw %}
 
 As you may see we are using a Quorum Consistency Level for both the select and insert operations. You can find more informations about it in the [Cassandra Consistency Level documentation](https://docs.datastax.com/en/cassandra/3.x/cassandra/dml/dmlConfigConsistency.html)
 
