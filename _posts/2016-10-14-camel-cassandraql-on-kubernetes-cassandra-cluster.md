@@ -9,12 +9,6 @@ In the last months I blogged about [Testing Camel-cassandraql](http://oscerd.git
 
 For this post we will use [Kubernetes](http://kubernetes.io/) to spin up our Apache Cassandra Cluster. To start the cluster you can use the [Fabric8 IPaas Cassandra app](https://github.com/fabric8io/fabric8-ipaas/tree/master/cassandra). Since we are using Minikube, you'll need to follow the [related instructions](http://fabric8.io/guide/getStarted/minikube.html).
 
-Don't forget to setup your local Docker to interact with Minikube.
-
-```
-eval $(minikube docker-env)
-```
-
 This project will spin up a Cassandra Cluster with three nodes. 
 
 As first step, in the cassandra folder, we will need to run
@@ -82,7 +76,7 @@ You can run the example with:
 
 ```
 mvn clean install
-mvn fabric8:deploy
+mvn fabric8:run
 ```
 
 You should be able to see your cassandra-client running:
@@ -96,10 +90,9 @@ cassandra-2459930792-ms265                1/1       Running   0          15m
 cassandra-client-3789635050-e1f2g         1/1       Running   0          1m
 ```
 
-Lets take a look at the logs from the Cassandra-client pod
+With the fabric8:run command you'll see the logs of the application in the console directly:
 
 ```
-oscerd@localhost:~/workspace/fabric8-universe/fabric8-quickstarts/cassandra-client$ kubectl logs cassandra-client-3789635050-e1f2g
 2016-10-14 09:06:15,786 [main           ] INFO  DCAwareRoundRobinPolicy        - Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
 2016-10-14 09:06:15,789 [main           ] INFO  Cluster                        - New Cassandra host cassandra/10.0.0.67:9042 added
 2016-10-14 09:06:15,790 [main           ] INFO  Cluster                        - New Cassandra host /172.17.0.10:9042 added
