@@ -275,7 +275,7 @@ o  'org.apache.kafka:connect-api'
 >infinispan-kafka-demo$ export CLASSPATH="$(find target/ -type f -name '*.jar'| grep '\-package' | tr '\n' ':')"
 ```
 
-We can start the connector now with the configuration of the demo project in this way:
+We can start the connector now with the configuration of the demo project, in this way:
 
 ```bash
 >infinispan-kafka-demo$ kafka_2.12-0.11.0.0/bin/connect-standalone.sh kafka_2.12-0.11.0.0/config/connect-standalone.properties config/InfinispanSinkConnector.properties 
@@ -659,7 +659,7 @@ In the connector log we should see something like this:
 [2017-07-31 12:03:20,015] INFO WorkerSinkTask{id=InfinispanSinkConnector-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSinkTask:278)
 ```
 
-While in the Camel-Infinispan-Kafka demo log we should see a different result from querying:
+While in the Camel-Infinispan-Kafka demo logs we should see a different result from the query:
 
 ```bash
 [mel-1) thread #1 - timer://foo] CamelInfinispanRoute           INFO  Query Result size 0
@@ -693,4 +693,4 @@ As you may see the Infinispan Cache has been populated with the data coming from
 
 ### Conclusion
 
-This blog post introduce the new Infinispan-Kafka connector and show a little demo involving, Kafka, Infinispan and Camel. Obviously there is so much more work to do on the connector and contributions are more than welcome. Follow the developments on the [Github repo](https://github.com/infinispan/infinispan-kafka).
+This blog post introduces the new Infinispan-Kafka connector and show a little demo involving, Kafka, Infinispan and Camel. Obviously there is so much more work to do on the connector and contributions are more than welcome. Follow the developments on the [Github repo](https://github.com/infinispan/infinispan-kafka).
