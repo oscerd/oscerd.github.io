@@ -73,7 +73,7 @@ Once the deployment is finished we are able to start using Syndesis platform.
 ### Building with a Camel Snapshot
 
 The option you'll need in this case will be --camel-snapshot, in combination with an environment variable called `CAMEL_SNAPSHOT_VERSION`. 
-In my case I need to test a new feature in a component from Camel 2.21.2-SNAPSHOT. The workflow to obtain a running Syndesis instance based on Camel 2.21.2-SNAPSHOT is the following (supposing you have a running Minishift).
+In my case I need to test a new feature in a component from Camel 2.21.2-SNAPSHOT. The workflow to obtain a running Syndesis instance based on Camel 2.21.2-SNAPSHOT is the following (supposing you have a running Minishift). I built Camel 2.21.2-SNAPSHOT locally before following these steps.
 
 Set the docker environment coming from Minishift
 
