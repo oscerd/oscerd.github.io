@@ -3,12 +3,12 @@ layout: page
 title: About
 ---
 
-I'm Andrea Cosentino and I work for Red Hat in the JBoss Fuse Team
+I'm Andrea Cosentino and I work for Red Hat in the Red Hat Fuse Team
 
-* Apache Camel PMC Member
+* Apache Camel PMC Chair
 * Apache Karaf Committer
-* Apache Servicemix Committer
-* Active on Fabric8, Hawtio and other projects
+* Apache Servicemix PMC Member
+* Active on Syndesis, Hawtio, Fabric8 and many other projects
 
 This is just a personal blog about open source, programming and more
 
