@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Camel AWS2 Components are here: what are the changes for end users?
+title: Camel AWS2 Components are here, what are the changes for end users?
 ---
 
 In Camel 3.2.0 we'll release the complete set of Camel AWS2 components. In Camel 3.1.0 we already have a bunch of AWS2 components living together with the original AWS components.
