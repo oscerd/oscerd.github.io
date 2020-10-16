@@ -182,7 +182,7 @@ The request syntax for adding a target to a rule is the following
 
 As you may see there are many parameters. We just need to set the rule name and add our target.
 
-### Creating a rule through camel
+### Creating a rule through Camel
 
 As I said there is a little example in the camel-examples repository based on camel-aws2-eventbridge, camel-aws2-s3 and camel-aws2-sqs.
 
