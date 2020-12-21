@@ -31,19 +31,17 @@ In the Kafka topic used as source we may have multiple repeated records with the
 
 The idempotency feature can be enabled through a number of configuration options available in ckc with the 0.7.0 release. In particular we are talking about:
 
-[width="100%",cols="2,5,3",options="header"]
-|===
-| Name | Description | Default 
-| camel.idempotency.enabled | If idempotency must be enabled or not | false 
-| camel.idempotency.repository.type | The idempotent repository type to use, possible values are memory and kafka | memory 
-| camel.idempotency.expression.type | How the idempotency will be evaluated: possible values are body and header | body 
-| camel.idempotency.expression.header | The header name that will be evaluated in case of camel.idempotency.expression.type equals to header | null 
-| camel.idempotency.memory.dimension | The Memory dimension of the in memory idempotent Repository | 100 
-| camel.idempotency.kafka.topic | The Kafka topic name to use for the idempotent repository | kafka_idempotent_repository 
-| camel.idempotency.kafka.bootstrap.servers | A comma-separated list of host and port pairs that are the addresses of the Kafka brokers where the idempotent repository should live | localhost:9092 
-| camel.idempotency.kafka.max.cache.size | Sets the maximum size of the local key cache | 1000 
-| camel.idempotency.kafka.poll.duration.ms | Sets the poll duration (in milliseconds) of the Kafka consumer | 100 
-|===
+| Name                                     | Description                                                                                                                           | Default                     |
+|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|
+| camel.idempotency.enabled                | If idempotency must be enabled or not                                                                                                 | false                       |
+| camel.idempotency.repository.type        | The idempotent repository type to use, possible values are memory and kafka                                                           | memory                      | 
+| camel.idempotency.expression.type        | How the idempotency will be evaluated: possible values are body and header                                                            | body                        | 
+| camel.idempotency.expression.header      | The header name that will be evaluated in case of camel.idempotency.expression.type equals to header                                  | null                        | 
+| camel.idempotency.memory.dimension       | The Memory dimension of the in memory idempotent Repository                                                                           | 100                         | 
+| camel.idempotency.kafka.topic            | The Kafka topic name to use for the idempotent repository                                                                             | kafka_idempotent_repository | 
+| camel.idempotency.kafka.bootstrap.servers| A comma-separated list of host and port pairs that are the addresses of the Kafka brokers where the idempotent repository should live | localhost:9092              | 
+| camel.idempotency.kafka.max.cache.size   | Sets the maximum size of the local key cache                                                                                          | 1000                        |
+| camel.idempotency.kafka.poll.duration.ms | Sets the poll duration (in milliseconds) of the Kafka consumer                                                                        | 100                         |
 
 The in-memory approach has been provided for short running connector workload, while the kafka one is for long running/interruptable connector.
 
