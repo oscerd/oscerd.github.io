@@ -1,7 +1,6 @@
 ---
 layout: post
 title: What's new in Camel-Kafka-connector 0.7.0
-draft: true
 ---
 
 Apache Camel Kafka Connector 0.7.0 has just been released.
