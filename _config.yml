@@ -1,14 +1,12 @@
 # Dependencies
 markdown:         kramdown
-kramdown:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
 highlighter:      rouge
 
 # Setup
 title:            Software Blog 
 tagline:          'Open source'
 description:      'Thoughts about programming, open source and more'
-url:              http://oscerd.github.io
+url:              https://oscerd.github.io
 baseurl:          /oscerd.github.io/
 
 author:
