@@ -11,7 +11,7 @@ title:            Software Blog
 tagline:          'Open source'
 description:      'Thoughts about programming, open source and more'
 url:              https://oscerd.github.io
-baseurl:          /oscerd.github.io/
+baseurl:          //oscerd.github.io/
 
 author:
   name:           'Andrea Cosentino'
