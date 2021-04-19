@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Camel-AWS-S3: New Streaming upload feature
+title: Camel-AWS-S3 - New Streaming upload feature
 ---
 
 In the last weeks I was focused on a particular feature for the Camel AWS S3 component: the streaming upload feature.
