@@ -2,6 +2,10 @@
 markdown:         kramdown
 highlighter:      rouge
 
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+
 # Setup
 title:            Software Blog 
 tagline:          'Open source'
