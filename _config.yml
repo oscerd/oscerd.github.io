@@ -27,3 +27,5 @@ gems:
 
 github:
   repo:           https://github.com/oscerd/oscerd.github.io
+
+theme: jekyll-theme-architect
