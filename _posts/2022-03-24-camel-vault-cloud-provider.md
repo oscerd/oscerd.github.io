@@ -37,7 +37,7 @@ For example for AWS:
 <camelContext>
     <route>
         <from uri="direct:start"/>
-        <log message="Username is {{aws:username}}"/>
+        <log message="Username is ``{{aws:username}}``"/>
     </route>
 </camelContext>
 ```
@@ -48,7 +48,7 @@ or
 <camelContext>
     <route>
         <from uri="direct:start"/>
-        <log message="Username is {{gcp:username}}"/>
+        <log message="Username is ``{{gcp:username}}``"/>
     </route>
 </camelContext>
 ```
@@ -154,7 +154,7 @@ You're able to do get single secret value in your route, like for example:
 <camelContext>
     <route>
         <from uri="direct:start"/>
-        <log message="Username is {{gcp:database/username}}"/>
+        <log message="Username is ``{{gcp:database/username}}``"/>
     </route>
 </camelContext>
 ```
@@ -171,7 +171,7 @@ You could specify a default value in case the particular field of secret is not 
 <camelContext>
     <route>
         <from uri="direct:start"/>
-        <log message="Username is {{gcp:database/username:admin}}"/>
+        <log message="Username is ``{{gcp:database/username:admin}}``"/>
     </route>
 </camelContext>
 ```
