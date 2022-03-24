@@ -33,25 +33,30 @@ The Vault feature works by specifying a particular prefix while using the Proper
 
 For example for AWS:
 
+{% raw %}
 ```xml
 <camelContext>
     <route>
         <from uri="direct:start"/>
-        <log message="Username is ``{{aws:username}}``"/>
+        <log message="Username is {{aws:username}}"/>
     </route>
 </camelContext>
 ```
+{% endraw %}
 
 or
 
+
+{% raw %}
 ```xml
 <camelContext>
     <route>
         <from uri="direct:start"/>
-        <log message="Username is ``{{gcp:username}}``"/>
+        <log message="Username is {{gcp:username}}"/>
     </route>
 </camelContext>
 ```
+{% endraw %}
 
 This notation will allow to run the following workflow while starting a camel route:
 - Connect and authenticate to AWS Secret Manager (or GCP)
@@ -150,14 +155,16 @@ Usually the format of the secret will be a JSON. With the Properties Function re
 
 You're able to do get single secret value in your route, like for example:
 
+{% raw %}
 ```xml
 <camelContext>
     <route>
         <from uri="direct:start"/>
-        <log message="Username is ``{{gcp:database/username}}``"/>
+        <log message="Username is {{gcp:database/username}}"/>
     </route>
 </camelContext>
 ```
+{% endraw %}
 
 In this route the property will be replaced by the field `username` of the value of the secret named `database`.
 
@@ -167,14 +174,16 @@ It is possible to fallback to a default value. Taking back the example above, we
 
 You could specify a default value in case the particular field of secret is not present on GCP Secret Manager:
 
+{% raw %}
 ```xml
 <camelContext>
     <route>
         <from uri="direct:start"/>
-        <log message="Username is ``{{gcp:database/username:admin}}``"/>
+        <log message="Username is {{gcp:database/username:admin}}"/>
     </route>
 </camelContext>
 ```
+{% endraw %}
 
 And in case something is not working, like authentication fails, secret doesn't exists or service is down, the value returned will be `admin`.
 
