@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Camel 3.16.0 new features: Load properties from Vault/Secrets cloud services"
+title: "Camel 3.16.0 new feature: Load properties from Vault/Secrets cloud services"
 ---
 
 In the last weeks, together with Claus, we've been working on a new feature: loading properties from Vault/Secrets cloud services.
