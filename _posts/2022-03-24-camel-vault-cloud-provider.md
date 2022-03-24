@@ -33,7 +33,7 @@ The Vault feature works by specifying a particular prefix while using the Proper
 
 For example for AWS:
 
-```
+```xml
 <camelContext>
     <route>
         <from uri="direct:start"/>
@@ -44,7 +44,7 @@ For example for AWS:
 
 or
 
-```
+```xml
 <camelContext>
     <route>
         <from uri="direct:start"/>
@@ -150,7 +150,7 @@ Usually the format of the secret will be a JSON. With the Properties Function re
 
 You're able to do get single secret value in your route, like for example:
 
-```
+```xml
 <camelContext>
     <route>
         <from uri="direct:start"/>
@@ -167,7 +167,7 @@ It is possible to fallback to a default value. Taking back the example above, we
 
 You could specify a default value in case the particular field of secret is not present on GCP Secret Manager:
 
-```
+```xml
 <camelContext>
     <route>
         <from uri="direct:start"/>
