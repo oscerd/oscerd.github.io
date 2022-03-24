@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Load properties from Vault/Secrets cloud services new feature in Camel 3.16.0
+title: "Camel 3.16.0 new features: Load properties from Vault/Secrets cloud services"
 ---
 
 In the last weeks, together with Claus, we've been working on a new feature: loading properties from Vault/Secrets cloud services.
@@ -177,6 +177,19 @@ You could specify a default value in case the particular field of secret is not 
 ```
 
 And in case something is not working, like authentication fails, secret doesn't exists or service is down, the value returned will be `admin`.
+
+### Future
+
+In the next Camel version we are planning to work on more Secret Management Services. In particular we want to add two main components to the list:
+
+- Azure Key Vault
+- Hashicorp Vault
+
+Follow the Camel's development to know more about the work in progress.
+
+Use the Properties Functions in your projects and give us feedback, once the release 3.16.0 will be out (it's on vote in these days).
+
+Stay tuned!
 
 
 
