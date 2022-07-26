@@ -55,6 +55,7 @@ camel.vault.azure.vaultName = vaultName
 
 To recover a secret from azure you might run something like:
 
+{% raw %}
 ```xml
 <camelContext>
     <route>
@@ -63,6 +64,7 @@ To recover a secret from azure you might run something like:
     </route>
 </camelContext>
 ```
+{% endraw %}
 
 
 #### Hashicorp Vault
@@ -89,6 +91,7 @@ camel.vault.hashicorp.scheme = scheme
 
 To recover a secret from Hashicorp Vault you might run something like:
 
+{% raw %}
 ```xml
 <camelContext>
     <route>
@@ -97,7 +100,7 @@ To recover a secret from Hashicorp Vault you might run something like:
     </route>
 </camelContext>
 ```
-
+{% endraw %}
 
 ### Multi fields Secrets and Default value
 
@@ -109,6 +112,7 @@ In the next Camel version we are going to release the support for recovering a s
 
 In particular you'll be able to recover a specific version of a secrets with the following syntax.
 
+{% raw %}
 ```xml
 <camelContext>
     <route>
@@ -117,6 +121,7 @@ In particular you'll be able to recover a specific version of a secrets with the
     </route>
 </camelContext>
 ```
+{% endraw %}
 
 In this example we're going to recover the field username from the secret database, with version "2". In case the version is not available, we're going to have a default value of 'admin'.
 
