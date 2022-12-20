@@ -89,6 +89,6 @@ This is well explained in this example the reader could run through camel-jbang:
 
 In the next Camel development for what concerns the secret updates feature, we would like to provide the ability to select a different kinds of tasks/policies to trigger a context reloading. For example, we would like to support the secret rotations events coming from AWS Services supporting the rotation. This is in our roadmap.
 
-If you find this feature useful and you feel there is something to improve, don't hesitate to contact us via the usual channels: https://camel.apache.org/community/support/
+If you find this feature useful and you feel there is something to improve, don't hesitate to contact us via the usual channels: [Camel Support](https://camel.apache.org/community/support/)
 
 Thanks for your attention and see you online.
