@@ -1,9 +1,7 @@
-# Building Intelligent Document Processing with Apache Camel: Docling meets LangChain4j
-
-**Author:** Andrea Cosentino
-**Date:** 2025-10-15
-
-## Introduction
+---
+layout: post
+title: "Building Intelligent Document Processing with Apache Camel: Docling meets LangChain4j"
+---
 
 In the rapidly evolving landscape of AI-powered applications, the ability to process and understand documents has become increasingly crucial. Whether you're dealing with PDFs, Word documents, or PowerPoint presentations, extracting meaningful insights from unstructured data is a challenge many developers face daily.
 
