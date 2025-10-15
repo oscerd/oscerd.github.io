@@ -96,6 +96,7 @@ $ docker exec -it ollama ollama pull orca-mini
 
 We use a Groovy script bean to configure our LangChain4j chat model:
 
+{% raw %}
 ```yaml
 - beans:
   - name: chatModel
@@ -113,12 +114,15 @@ We use a Groovy script bean to configure our LangChain4j chat model:
         .build()
 ```
 
+
 Notice how we use property placeholders (`{{ollama.base.url}}`) which Camel automatically resolves. This makes the configuration flexible and environment-agnostic.
+{% endraw %}
 
 ### The Main RAG Route
 
 Here's where the magic happens. The route watches for documents, processes them through Docling, and analyzes them with our LLM:
 
+{% raw %}
 ```yaml
 - route:
     id: document-analysis-workflow
@@ -161,6 +165,7 @@ Here's where the magic happens. The route watches for documents, processes them 
             parameters:
               chatModel: "#chatModel"
 ```
+{% endraw %}
 
 ### Interactive Q&A API
 
