@@ -185,23 +185,14 @@ $ curl -X POST http://localhost:8080/api/ask \
   -d "What are the main topics in this document?"
 ```
 
-## Real-World Benefits
-
-We've seen this pattern deliver significant value in various scenarios:
-
-**Legal Document Review**: Automatically analyze contracts and extract key terms, obligations, and risks.
-**Medical Records Processing**: Convert clinical notes to structured data and generate patient summaries.
-**Financial Report Analysis**: Extract key metrics from quarterly reports and identify trends.
-**Research Paper Summarization**: Process academic papers and generate concise summaries with key findings.
-
 ## Future Enhancements
 
 Possible developments could be:
 
-**Vector Storage Integration**: Combine with camel-langchain4j-embeddings to store document chunks in vector databases for more sophisticated retrieval.
-**Multi-Model Workflows**: Use different models for different tasks - fast models for classification, powerful models for analysis.
-**Streaming Responses**: For long documents, stream LLM responses back to the client as they're generated.
-**Custom Tools**: Integrate camel-langchain4j-tools to give the LLM access to external data sources.
+- **Vector Storage Integration**: Combine with camel-langchain4j-embeddings to store document chunks in vector databases for more sophisticated retrieval.
+- **Multi-Model Workflows**: Use different models for different tasks - fast models for classification, powerful models for analysis.
+- **Streaming Responses**: For long documents, stream LLM responses back to the client as they're generated.
+- **Custom Tools**: Integrate camel-langchain4j-tools to give the LLM access to external data sources.
 
 ## Try It Yourself
 
