@@ -62,7 +62,17 @@ All of this is defined declaratively in YAML, making it easy to understand and m
 
 ### Setting Up the Infrastructure
 
-First, we need our services running. Thanks to Docker, this is simple:
+First, we need our services running. Thanks to camel infra command, this is pretty simple:
+
+```shell
+# Start Docling (if camel infra supports it)
+$ jbang -Dcamel.jbang.version=4.16.0-SNAPSHOT camel@apache/camel infra run docling
+
+# Start Ollama (if camel infra supports it)
+$ jbang -Dcamel.jbang.version=4.16.0-SNAPSHOT camel@apache/camel infra run ollama
+```
+
+Or we could use docker
 
 ```shell
 # Start Docling-Serve
