@@ -2,12 +2,30 @@
 layout: page
 title: Posts
 ---
-<div class="posts">
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
+<div class="posts-archive">
+  {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in postsByYear %}
+    <div class="archive-year">
+      <h2 class="archive-year-title">{{ year.name }}</h2>
+      <div class="archive-posts">
+        {% for post in year.items %}
+          <article class="archive-post">
+            <a href="{{ post.url }}" class="archive-post-link">
+              <div class="archive-post-content">
+                <h3 class="archive-post-title">{{ post.title }}</h3>
+                <div class="archive-post-meta">
+                  <time class="archive-post-date">{{ post.date | date: "%b %d" }}</time>
+                  {% assign words = post.content | strip_html | number_of_words %}
+                  {% assign minutes = words | divided_by: 200 %}
+                  {% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+                  <span class="archive-reading-time">{{ minutes }} min read</span>
+                </div>
+              </div>
+              <span class="archive-post-arrow">&rarr;</span>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
   {% endfor %}
-</ul>
 </div>
