@@ -476,3 +476,125 @@ a.pagination-item:hover {
     display: none;
   }
 }
+
+
+/*
+ * About Page
+ *
+ * Enhanced styling for the about page
+ */
+
+.about-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+}
+
+.about-header h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.75rem;
+  color: #313131;
+}
+
+.about-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #268bd2;
+  font-weight: 500;
+}
+
+.about-roles {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.role-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.role-card:hover {
+  background-color: #f0f2f5;
+  transform: translateX(4px);
+}
+
+.role-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.role-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.role-details strong {
+  font-size: 0.95rem;
+  color: #313131;
+}
+
+.role-details span {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.about-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.about-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: #313131;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.about-social-link:hover {
+  background-color: #313131;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.about-social-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+}
+
+/* Responsive about page */
+@media (max-width: 30em) {
+  .about-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .role-card {
+    padding: 0.75rem;
+  }
+
+  .about-social {
+    flex-direction: column;
+  }
+
+  .about-social-link {
+    justify-content: center;
+  }
+}
