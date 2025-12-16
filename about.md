@@ -8,7 +8,7 @@ title: About
   <p class="about-title">Senior Principal Software Engineer at IBM</p>
 </div>
 
-I'm an open source enthusiast and **Senior Principal Software Engineer** at [IBM](https://www.ibm.com), working on integration technologies. My focus is on enterprise integration, particularly the Apache Camel ecosystem.
+I'm an open source enthusiast and **Senior Principal Software Engineer** at [IBM](https://www.ibm.com), working on integration technologies. I co-lead the [Apache Camel](https://camel.apache.org) project together with Claus Ibsen, focusing on enterprise integration.
 
 ## Open Source Leadership
 

@@ -525,7 +525,7 @@ a.pagination-item:hover {
 }
 
 .role-icon {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -575,8 +575,8 @@ a.pagination-item:hover {
 }
 
 .about-social-icon {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 0.9rem;
+  height: 0.9rem;
   fill: currentColor;
 }
 
