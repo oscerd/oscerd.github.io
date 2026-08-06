@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Cryptographic Pills Episode 1 - Modern Cryptography
+math: true
 ---
 
 In the last days I started to look at the Cryptography's Theory again. I guess it's an interesting subject for anyone involved in the IT world: for developers and security specialists understand some key concepts is essential to manage particular scenarios. Yesterday there was the Google's announce about the [first SHA-1 collision](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html): hash functions will be in one of the articles I currently have in mind. I'll try to write about Cryptographic pills in episodes and I hope you'll appreciate the subject. Let's start!

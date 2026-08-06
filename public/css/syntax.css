@@ -3,28 +3,16 @@
  * Modern, easy-on-the-eyes code blocks
  */
 
-/* Code block container */
+/* Code block container. Layout and radius come from poole.css; this keeps
+ * the One Dark surface so blocks read the same in light and dark themes. */
 .highlight {
-  background-color: #282c34;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  overflow: hidden;
+  background-color: var(--code-bg);
 }
 
 .highlight pre {
-  background-color: #282c34;
-  color: #abb2bf;
-  padding: 1.25rem;
+  background-color: var(--code-bg);
+  color: var(--code-text);
   margin: 0;
-  overflow-x: auto;
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.highlight pre code {
-  background-color: transparent;
-  color: inherit;
-  padding: 0;
 }
 
 /* Line highlighting */
@@ -113,26 +101,5 @@
 .css .o + .nt,
 .css .nt + .nt { color: #abb2bf; }
 
-/* Inline code styling */
-code {
-  background-color: #f0f2f5;
-  color: #e06c75;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-size: 0.9em;
-}
-
-/* Pre block base styling */
-pre {
-  background-color: #282c34;
-  color: #abb2bf;
-  border-radius: 8px;
-  overflow-x: auto;
-}
-
-pre code {
-  background-color: transparent;
-  color: inherit;
-  padding: 0;
-  font-size: inherit;
-}
+/* Inline `code` and the `pre` base live in poole.css so they follow the
+ * theme tokens. This file only colours the tokens inside .highlight. */
