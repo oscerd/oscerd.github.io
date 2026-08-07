@@ -714,6 +714,84 @@ a.sidebar-nav-item:focus {
   color: var(--text-muted);
 }
 
+/* Patents */
+.patent-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+.patent-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-strong);
+  border-radius: var(--radius);
+  transition: all 0.15s ease;
+}
+.patent-item:hover {
+  border-left-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.patent-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-strong);
+}
+
+.patent-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The pending list is long, so it folds away. Add `open` to expand by default. */
+.patent-more {
+  margin: 1.5rem 0;
+}
+.patent-more > summary {
+  cursor: pointer;
+  padding: 0.7rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  list-style: none;
+  transition: all 0.15s ease;
+}
+.patent-more > summary::-webkit-details-marker {
+  display: none;
+}
+.patent-more > summary::before {
+  content: "\25B8";
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: var(--text-faint);
+  transition: transform 0.15s ease;
+}
+.patent-more[open] > summary::before {
+  transform: rotate(90deg);
+}
+.patent-more > summary:hover {
+  border-color: var(--border-strong);
+  color: var(--accent);
+}
+.patent-more[open] > summary {
+  margin-bottom: 0.6rem;
+}
+.patent-more .patent-list {
+  margin-top: 0;
+}
+
 /* Contact / elsewhere */
 .about-social {
   display: grid;

@@ -54,7 +54,7 @@ I didn't plan any of this as a career path. I picked up a component that needed 
 
 <ul class="timeline">
   <li class="is-current">
-    <span class="timeline-when">Now</span>
+    <span class="timeline-when">Since July 2025</span>
     <span class="timeline-what">Senior Principal Software Engineer, IBM</span>
     <span class="timeline-detail">Integration technologies. On the Apache side I chair the Camel PMC and co-lead the project with Claus Ibsen, which in practice means releases, reviews, security triage and a lot of mailing list.</span>
   </li>
@@ -92,6 +92,16 @@ I didn't plan any of this as a career path. I picked up a component that needed 
       This is also the ServiceMix and Karaf period, which is where I learned how much of integration is really classloading.
     </span>
   </li>
+  <li>
+    <span class="timeline-when">2015 &ndash; 2025</span>
+    <span class="timeline-what">Red Hat</span>
+    <span class="timeline-detail">
+      Ten years, and almost everything above happened there: the middleware and integration work, the components,
+      the releases, and most of the patents further down this page. A decade in one place sounds static,
+      but the stack underneath moved from OSGi containers to Spring Boot and Quarkus and then to whatever we are
+      calling cloud native this year, so in practice very little of it stayed still.
+    </span>
+  </li>
 </ul>
 
 ## Current Focus
@@ -107,6 +117,189 @@ Outside of Camel itself I contribute to Hawtio and to a number of smaller projec
 A lot of the work is not feature work at all. Keeping a project the size of Camel healthy means release management, reviewing other people's patches, triaging security reports, chasing dependency updates that nobody enjoys, and making sure the same route behaves the same way on Spring Boot, on Quarkus and on plain Java. None of that shows up in a changelog in a way anyone notices, but its the part that decides whether the project is still usable in five years.
 
 The rest of my time goes on the boundary between the project and the people using it: answering questions on the mailing lists, writing up what changed and why, and trying to make the upgrade path from one major version to the next less painful then it needs to be.
+
+## Patents
+
+Alongside the open source work I have spent a lot of time on patents: 41 inventions so far, 16 of them granted. Most were filed during the Red Hat years and a few more since moving to IBM. The full record is on my [Google Scholar profile](https://scholar.google.com/citations?user=4QEpZp4AAAAJ){:target="_blank"}, which also still carries a paper from a previous life, "FAN: Fast NetFlow analyser", from IEEE INFOCOM 2013.
+
+They fall into a few groups. A lot of messaging and event streaming: serializers, schemas, the claim check pattern, message sizing on mesh networks, compression for idempotent stores. Then secrets and key management, which is the same problem I ended up solving in the open with the Camel Vault property function. Then a long run of connected vehicle work: over the air updates, keyless entry, vehicle control on serverless functions. Lately it has been supply chain and AI: SBOM compliance, working out the minimal dependency update that clears a CVE, data provenance for foundational model training, and mediating access to quantum services.
+
+The part that takes the time is not the writing. It is prior art search: reading through everything already published in an area before you can argue that the thing in front of you is actually new. I have done a lot of that, on my own submissions and reviewing other people's, and it turns out to be a habit worth having well outside the patent process. It is the same instinct that tells you a brand new CVE is really the same bug shape you already saw two years ago.
+
+<h3>Granted (16)</h3>
+
+<ul class="patent-list">
+  <li class="patent-item">
+    <span class="patent-title">Message format indicator for resource-constrained devices</span>
+    <span class="patent-meta">US 12,556,620 &middot; granted 2026</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Idling and waking a sender node for event message delivery</span>
+    <span class="patent-meta">US 12,554,535 &middot; granted 2026</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Cloud to on-premises storage migration</span>
+    <span class="patent-meta">US 12,481,447 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Vehicle control using serverless functions</span>
+    <span class="patent-meta">US 12,472,961 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Adaptive asymmetric-key compression for idempotent data stores</span>
+    <span class="patent-meta">US 12,457,095 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Intra-vehicle over-the-air updates</span>
+    <span class="patent-meta">US 12,436,756 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Adaptive compression for idempotent data stores in computer messaging</span>
+    <span class="patent-meta">US 12,425,494 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Managing message sizes in a mesh network</span>
+    <span class="patent-meta">US 12,363,585 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Cross-domain data access</span>
+    <span class="patent-meta">US 12,284,217 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Sizing service for cloud migration away from only cloud storage</span>
+    <span class="patent-meta">US 12,260,224 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Application profiling to resize and reconfigure compute instances</span>
+    <span class="patent-meta">US 12,248,386 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Object creation from schema for event streaming platform</span>
+    <span class="patent-meta">US 12,197,401 &middot; granted 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Creation of message serializer for event streaming platform</span>
+    <span class="patent-meta">US 11,995,096 &middot; granted 2024</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Secrets rotation for vehicles</span>
+    <span class="patent-meta">US 11,991,278 &middot; granted 2024</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Cloud-based keyless entry system</span>
+    <span class="patent-meta">US 11,731,585 &middot; granted 2023 &middot; continuation US 12,214,747</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Dynamic runtime application integration</span>
+    <span class="patent-meta">US 11,641,306 &middot; granted 2023</span>
+  </li>
+</ul>
+
+<details class="patent-more">
+  <summary>Filed and pending (25)</summary>
+<ul class="patent-list">
+  <li class="patent-item">
+    <span class="patent-title">Identifying minimal dependency updates to mitigate known CVEs</span>
+    <span class="patent-meta">Application 18/890,363 &middot; 2026</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Auditable data provenance for training dataset prediction in large foundational models</span>
+    <span class="patent-meta">Application 18/890,281 &middot; 2026</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Deployment of configuration files generated from serverless functions</span>
+    <span class="patent-meta">Application 18/888,776 &middot; 2026</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Dynamic mediation of access to quantum services</span>
+    <span class="patent-meta">Application 18/817,964 &middot; 2026</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Mitigating vulnerabilities in a software program based on its usage</span>
+    <span class="patent-meta">Application 18/790,484 &middot; 2026</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Event sourcing for quantum debugging and failover mechanisms</span>
+    <span class="patent-meta">Application 18/738,906 &middot; 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Techniques for validating safety agreement compliance using SBOMs</span>
+    <span class="patent-meta">Application 18/639,683 &middot; 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Migrating ransomware activity of an operating system</span>
+    <span class="patent-meta">Application 18/637,578 &middot; 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Mitigating ransomware activity of a host system using a kernel monitor</span>
+    <span class="patent-meta">Application 18/531,073 &middot; 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Claim check mechanism for a message payload</span>
+    <span class="patent-meta">Application 18/470,928 &middot; 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Matching commands to attack patterns</span>
+    <span class="patent-meta">Application 18/362,654 &middot; 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Sizing service for cloud migration to physical machine</span>
+    <span class="patent-meta">Application 19/073,894 &middot; 2025</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Intra-vehicle over-the-air updates based on install timestamp</span>
+    <span class="patent-meta">Application 18/326,927 &middot; 2024</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Intra-vehicle over-the-air updates incorporating update compatibility</span>
+    <span class="patent-meta">Application 18/326,797 &middot; 2024</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Secrets management topology migrator</span>
+    <span class="patent-meta">Application 18/198,402 &middot; 2024</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Key rotation based on traffic state</span>
+    <span class="patent-meta">Application 18/160,504 &middot; 2024</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Migrating secrets from a cloud environment to a local system</span>
+    <span class="patent-meta">Application 18/116,995 &middot; 2024</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">User-customized vehicle control using serverless functions</span>
+    <span class="patent-meta">Application 17/899,098 &middot; 2024</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Proactive integrity checks</span>
+    <span class="patent-meta">Application 17/874,138 &middot; 2024</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Adjusting the size of a resource pool</span>
+    <span class="patent-meta">Application 17/680,725 &middot; 2023</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Authenticating electronic key devices</span>
+    <span class="patent-meta">Application 17/672,609 &middot; 2023</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Providing system updates in automotive contexts</span>
+    <span class="patent-meta">Application 17/343,253 &middot; 2022</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Multi-strategy compression scheme</span>
+    <span class="patent-meta">Application 17/231,766 &middot; 2022</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Simplifying creation and publishing of schemas</span>
+    <span class="patent-meta">Application 17/231,773 &middot; 2022</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Managing event delivery in a serverless computing environment</span>
+    <span class="patent-meta">Application 17/022,528 &middot; 2022</span>
+  </li>
+</ul>
+</details>
 
 ## Interests
 
