@@ -120,19 +120,24 @@ The rest of my time goes on the boundary between the project and the people usin
 
 ## Patents
 
-Alongside the open source work I have spent a lot of time on patents: 41 inventions so far, 16 of them granted. Most were filed during the Red Hat years and a few more since moving to IBM. Almost none of it is solo work, it is mostly with Paolo Antinori and Leigh Griffin, and the full record is on my [Google Scholar profile](https://scholar.google.com/citations?user=4QEpZp4AAAAJ){:target="_blank"}.
+Alongside the open source work I have spent a lot of time on patents: 41 inventions so far, 22 of them granted. Most were filed during the Red Hat years and a few more since moving to IBM. Almost none of it is solo work, it is mostly with Paolo Antinori and Leigh Griffin, and the full record is on my [Google Scholar profile](https://scholar.google.com/citations?user=4QEpZp4AAAAJ){:target="_blank"}.
 
 They fall into a few groups. A lot of messaging and event streaming: serializers, schemas, the claim check pattern, message sizing on mesh networks, compression for idempotent stores. Then secrets and key management, which is the same problem I ended up solving in the open with the Camel Vault property function. Then a long run of connected vehicle work: over the air updates, keyless entry, vehicle control on serverless functions. Lately it has been supply chain and AI: SBOM compliance, working out the minimal dependency update that clears a CVE, data provenance for foundational model training, and mediating access to quantum services.
 
 The part that takes the time is not the writing. It is prior art search: reading through everything already published in an area before you can argue that the thing in front of you is actually new. I have done a lot of that, on my own submissions and reviewing other people's, and it turns out to be a habit worth having well outside the patent process. It is the same instinct that tells you a brand new CVE is really the same bug shape you already saw two years ago.
 
-<h3>Granted (16)</h3>
+<h3>Granted (22)</h3>
 
 <ul class="patent-list">
   <li class="patent-item">
     <span class="patent-title">Message format indicator for resource-constrained devices</span>
     <span class="patent-meta">US 12,556,620 &middot; granted 2026</span>
     <span class="patent-with">with Paolo Antinori</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Secrets management topology migrator</span>
+    <span class="patent-meta">US 12,556,513 &middot; granted 2026</span>
+    <span class="patent-with">with Paolo Antinori and Leigh Griffin</span>
   </li>
   <li class="patent-item">
     <span class="patent-title">Idling and waking a sender node for event message delivery</span>
@@ -165,6 +170,11 @@ The part that takes the time is not the writing. It is prior art search: reading
     <span class="patent-with">with Paolo Antinori</span>
   </li>
   <li class="patent-item">
+    <span class="patent-title">Adjusting the size of a resource pool</span>
+    <span class="patent-meta">US 12,386,676 &middot; granted 2025</span>
+    <span class="patent-with">with Paolo Antinori</span>
+  </li>
+  <li class="patent-item">
     <span class="patent-title">Managing message sizes in a mesh network</span>
     <span class="patent-meta">US 12,363,585 &middot; granted 2025</span>
     <span class="patent-with">with Leigh Griffin and Paolo Antinori</span>
@@ -185,6 +195,11 @@ The part that takes the time is not the writing. It is prior art search: reading
     <span class="patent-with">with Paolo Antinori</span>
   </li>
   <li class="patent-item">
+    <span class="patent-title">Proactive integrity checks</span>
+    <span class="patent-meta">US 12,216,535 &middot; granted 2025</span>
+    <span class="patent-with">with Paolo Antinori</span>
+  </li>
+  <li class="patent-item">
     <span class="patent-title">Object creation from schema for event streaming platform</span>
     <span class="patent-meta">US 12,197,401 &middot; granted 2025</span>
     <span class="patent-with">with Paolo Antinori</span>
@@ -200,6 +215,11 @@ The part that takes the time is not the writing. It is prior art search: reading
     <span class="patent-with">with Paolo Antinori</span>
   </li>
   <li class="patent-item">
+    <span class="patent-title">Multi-strategy compression scheme</span>
+    <span class="patent-meta">US 11,861,292 &middot; granted 2024</span>
+    <span class="patent-with">with Paolo Antinori</span>
+  </li>
+  <li class="patent-item">
     <span class="patent-title">Cloud-based keyless entry system</span>
     <span class="patent-meta">US 11,731,585 &middot; granted 2023 &middot; continuation US 12,214,747</span>
     <span class="patent-with">with Paolo Antinori</span>
@@ -209,135 +229,115 @@ The part that takes the time is not the writing. It is prior art search: reading
     <span class="patent-meta">US 11,641,306 &middot; granted 2023</span>
     <span class="patent-with">with Paolo Antinori</span>
   </li>
+  <li class="patent-item">
+    <span class="patent-title">Managing event delivery in a serverless computing environment</span>
+    <span class="patent-meta">US 11,609,803 &middot; granted 2023</span>
+    <span class="patent-with">with Nicola Ferraro</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Providing system updates in automotive contexts</span>
+    <span class="patent-meta">US 11,567,751 &middot; granted 2023</span>
+    <span class="patent-with">with Paolo Antinori</span>
+  </li>
 </ul>
 
 <details class="patent-more">
-  <summary>Filed and pending (25)</summary>
+  <summary>Filed and pending (19)</summary>
 <ul class="patent-list">
   <li class="patent-item">
-    <span class="patent-title">Identifying minimal dependency updates to mitigate known CVEs</span>
-    <span class="patent-meta">Application 18/890,363 &middot; 2026</span>
-    <span class="patent-with">with Leigh Griffin and Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
     <span class="patent-title">Auditable data provenance for training dataset prediction in large foundational models</span>
-    <span class="patent-meta">Application 18/890,281 &middot; 2026</span>
+    <span class="patent-meta">US 2026/0080305 &middot; published 2026</span>
     <span class="patent-with">with Leigh Griffin</span>
   </li>
   <li class="patent-item">
     <span class="patent-title">Deployment of configuration files generated from serverless functions</span>
-    <span class="patent-meta">Application 18/888,776 &middot; 2026</span>
+    <span class="patent-meta">US 2026/0079720 &middot; published 2026</span>
     <span class="patent-with">with Leigh Griffin</span>
   </li>
   <li class="patent-item">
+    <span class="patent-title">Identifying minimal dependency updates to mitigate known CVEs</span>
+    <span class="patent-meta">US 2026/0079690 &middot; published 2026</span>
+    <span class="patent-with">with Leigh Griffin and Paolo Antinori</span>
+  </li>
+  <li class="patent-item">
     <span class="patent-title">Dynamic mediation of access to quantum services</span>
-    <span class="patent-meta">Application 18/817,964 &middot; 2026</span>
+    <span class="patent-meta">US 2026/0065123 &middot; published 2026</span>
     <span class="patent-with">with Leigh Griffin and Paolo Antinori</span>
   </li>
   <li class="patent-item">
     <span class="patent-title">Mitigating vulnerabilities in a software program based on its usage</span>
-    <span class="patent-meta">Application 18/790,484 &middot; 2026</span>
+    <span class="patent-meta">US 2026/0037636 &middot; published 2026</span>
     <span class="patent-with">with Luca Burgazzoli</span>
   </li>
   <li class="patent-item">
     <span class="patent-title">Event sourcing for quantum debugging and failover mechanisms</span>
-    <span class="patent-meta">Application 18/738,906 &middot; 2025</span>
-    <span class="patent-with">with Leigh Griffin and Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Techniques for validating safety agreement compliance using SBOMs</span>
-    <span class="patent-meta">Application 18/639,683 &middot; 2025</span>
+    <span class="patent-meta">US 2025/0377957 &middot; published 2025</span>
     <span class="patent-with">with Leigh Griffin and Paolo Antinori</span>
   </li>
   <li class="patent-item">
     <span class="patent-title">Migrating ransomware activity of an operating system</span>
-    <span class="patent-meta">Application 18/637,578 &middot; 2025</span>
-    <span class="patent-with">with Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Mitigating ransomware activity of a host system using a kernel monitor</span>
-    <span class="patent-meta">Application 18/531,073 &middot; 2025</span>
-    <span class="patent-with">with Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Claim check mechanism for a message payload</span>
-    <span class="patent-meta">Application 18/470,928 &middot; 2025</span>
-    <span class="patent-with">with Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Matching commands to attack patterns</span>
-    <span class="patent-meta">Application 18/362,654 &middot; 2025</span>
+    <span class="patent-meta">US 2025/0328650 &middot; published 2025</span>
     <span class="patent-with">with Paolo Antinori</span>
   </li>
   <li class="patent-item">
     <span class="patent-title">Sizing service for cloud migration to physical machine</span>
-    <span class="patent-meta">Application 19/073,894 &middot; 2025</span>
+    <span class="patent-meta">US 2025/0208880 &middot; published 2025</span>
     <span class="patent-with">with Leigh Griffin and Paolo Antinori</span>
   </li>
   <li class="patent-item">
-    <span class="patent-title">Intra-vehicle over-the-air updates based on install timestamp</span>
-    <span class="patent-meta">Application 18/326,927 &middot; 2024</span>
+    <span class="patent-title">Claim check mechanism for a message payload</span>
+    <span class="patent-meta">US 2025/0097181 &middot; published 2025</span>
     <span class="patent-with">with Paolo Antinori</span>
   </li>
   <li class="patent-item">
-    <span class="patent-title">Intra-vehicle over-the-air updates incorporating update compatibility</span>
-    <span class="patent-meta">Application 18/326,797 &middot; 2024</span>
-    <span class="patent-with">with Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Secrets management topology migrator</span>
-    <span class="patent-meta">Application 18/198,402 &middot; 2024</span>
-    <span class="patent-with">with Paolo Antinori and Leigh Griffin</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Key rotation based on traffic state</span>
-    <span class="patent-meta">Application 18/160,504 &middot; 2024</span>
+    <span class="patent-title">Matching commands to attack patterns</span>
+    <span class="patent-meta">US 2025/0045395 &middot; published 2025</span>
     <span class="patent-with">with Paolo Antinori</span>
   </li>
   <li class="patent-item">
     <span class="patent-title">Migrating secrets from a cloud environment to a local system</span>
-    <span class="patent-meta">Application 18/116,995 &middot; 2024</span>
+    <span class="patent-meta">US 2024/0297782 &middot; published 2024</span>
     <span class="patent-with">with Leigh Griffin and Paolo Antinori</span>
   </li>
   <li class="patent-item">
+    <span class="patent-title">Key rotation based on traffic state</span>
+    <span class="patent-meta">US 2024/0259197 &middot; published 2024</span>
+    <span class="patent-with">with Paolo Antinori</span>
+  </li>
+  <li class="patent-item">
     <span class="patent-title">User-customized vehicle control using serverless functions</span>
-    <span class="patent-meta">Application 17/899,098 &middot; 2024</span>
-    <span class="patent-with">with Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Proactive integrity checks</span>
-    <span class="patent-meta">Application 17/874,138 &middot; 2024</span>
-    <span class="patent-with">with Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Adjusting the size of a resource pool</span>
-    <span class="patent-meta">Application 17/680,725 &middot; 2023</span>
+    <span class="patent-meta">US 2024/0070258 &middot; published 2024</span>
     <span class="patent-with">with Paolo Antinori</span>
   </li>
   <li class="patent-item">
     <span class="patent-title">Authenticating electronic key devices</span>
-    <span class="patent-meta">Application 17/672,609 &middot; 2023</span>
-    <span class="patent-with">with Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Providing system updates in automotive contexts</span>
-    <span class="patent-meta">Application 17/343,253 &middot; 2022</span>
-    <span class="patent-with">with Paolo Antinori</span>
-  </li>
-  <li class="patent-item">
-    <span class="patent-title">Multi-strategy compression scheme</span>
-    <span class="patent-meta">Application 17/231,766 &middot; 2022</span>
+    <span class="patent-meta">US 2023/0256936 &middot; published 2023</span>
     <span class="patent-with">with Paolo Antinori</span>
   </li>
   <li class="patent-item">
     <span class="patent-title">Simplifying creation and publishing of schemas</span>
-    <span class="patent-meta">Application 17/231,773 &middot; 2022</span>
+    <span class="patent-meta">US 2022/0334811 &middot; published 2022</span>
     <span class="patent-with">with Paolo Antinori</span>
   </li>
   <li class="patent-item">
-    <span class="patent-title">Managing event delivery in a serverless computing environment</span>
-    <span class="patent-meta">Application 17/022,528 &middot; 2022</span>
-    <span class="patent-with">with Nicola Ferraro</span>
+    <span class="patent-title">Techniques for validating safety agreement compliance using SBOMs</span>
+    <span class="patent-meta">EP 4636583 &middot; published 2025</span>
+    <span class="patent-with">with Leigh Griffin and Paolo Antinori</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Mitigating ransomware activity of a host system using a kernel monitor</span>
+    <span class="patent-meta">EP 4567648 &middot; published 2025</span>
+    <span class="patent-with">with Paolo Antinori</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Intra-vehicle over-the-air updates based on install timestamp</span>
+    <span class="patent-meta">EP 4471578 &middot; published 2024</span>
+    <span class="patent-with">with Paolo Antinori</span>
+  </li>
+  <li class="patent-item">
+    <span class="patent-title">Intra-vehicle over-the-air updates incorporating update compatibility</span>
+    <span class="patent-meta">EP 4471579 &middot; published 2024</span>
+    <span class="patent-with">with Paolo Antinori</span>
   </li>
 </ul>
 </details>
