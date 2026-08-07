@@ -752,6 +752,13 @@ a.sidebar-nav-item:focus {
   font-variant-numeric: tabular-nums;
 }
 
+.patent-with {
+  margin-top: 0.1rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-faint);
+}
+
 /* The pending list is long, so it folds away. Add `open` to expand by default. */
 .patent-more {
   margin: 1.5rem 0;
