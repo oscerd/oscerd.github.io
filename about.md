@@ -88,7 +88,7 @@ I didn't plan any of this as a career path. I picked up a component that needed 
       Writing and maintaining components: <a href="/2016/07/11/camel-kubernetes-introduction.html">camel-kubernetes</a>,
       <a href="/2016/04/18/introducing-camel-nats.html">camel-nats</a>,
       <a href="/2016/10/14/camel-cassandraql-on-kubernetes-cassandra-cluster.html">camel-cassandraql on Kubernetes</a>,
-      plus <a href="/2018/06/28/building-syndesis-with-camel-snapshot.html">Syndesis</a> and the Camel 2.x releases.
+      the Camel 2.x releases, and <a href="/2016/07/06/contributing-camel-components.html">helping other people land their own components</a>.
       This is also the ServiceMix and Karaf period, which is where I learned how much of integration is really classloading.
     </span>
   </li>
@@ -102,7 +102,11 @@ I'm currently working on expanding the Camel ecosystem through subprojects like:
 - **Camel Quarkus** - Supersonic, subatomic Java integrations
 - **Kamelets** - Reusable route snippets for easy integrations
 
-I'm also actively contributing to Syndesis, Hawtio, Fabric8, and various other open source projects.
+Outside of Camel itself I contribute to Hawtio and to a number of smaller projects around the same ecosystem, usually because something broke and I happened to be the person looking at it.
+
+A lot of the work is not feature work at all. Keeping a project the size of Camel healthy means release management, reviewing other people's patches, triaging security reports, chasing dependency updates that nobody enjoys, and making sure the same route behaves the same way on Spring Boot, on Quarkus and on plain Java. None of that shows up in a changelog in a way anyone notices, but its the part that decides whether the project is still usable in five years.
+
+The rest of my time goes on the boundary between the project and the people using it: answering questions on the mailing lists, writing up what changed and why, and trying to make the upgrade path from one major version to the next less painful then it needs to be.
 
 ## Interests
 
