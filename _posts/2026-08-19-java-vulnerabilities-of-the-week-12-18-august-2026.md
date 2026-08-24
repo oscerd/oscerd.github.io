@@ -3,7 +3,7 @@ layout: post
 title: "Java vulnerabilities of the week: 12 to 18 August 2026"
 ---
 
-Second half of the catch-up. [The previous post](/2026/08/12/java-vulnerabilities-of-the-week-5-11-august-2026.html) covered 5 to 11 August, this one covers 12 to 18. Same format: the five things worth knowing, then two taken apart, because the mechanism is the part you can generalise from.
+[The previous post](/2026/08/12/java-vulnerabilities-of-the-week-5-11-august-2026.html) covered 5 to 11 August, this one covers 12 to 18. Same format: the five things worth knowing, then two taken apart, because the mechanism is the part you can generalise from.
 
 This week is lighter in volume and unusually consistent in shape. Almost every item is a security control that exists in the code, is documented, and in some cases is explicitly configured, and that for one reason or another is not in effect on the path you are actually using. A hostname verification policy that does not reach the layer that would enforce it. A trust manager, offered as a convenience, that accepts anything. A `Vary` header replaced rather then extended. A Digest `uri` parameter never compared to the request. An `HttpOnly` flag left off a cookie that is also doing duty as a CSRF token.
 
@@ -77,7 +77,7 @@ On arrival: Netty and `httpclient5` are transitive under most of the Java world,
 
 If I were picking one thing to do this week it would not be a version bump. It would be the negative TLS test, on whichever client talks to the system you would least like to lose. Two of the items above would have shown up the first time it ran.
 
-Back on schedule from here. See you next week.
+See you next week.
 
 ## References
 
