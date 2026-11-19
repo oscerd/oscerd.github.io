@@ -34,7 +34,19 @@ Base64 is how you carry binary data through text, so decoding it is one of the f
 
 ## From a fixed write to code execution
 
-Turning the overwrite into RCE is the hard part, and its why the two published scores disagree: Calif put it at 9.2 on CVSS 4.0, the OpenJDK advisory at 8.1 on CVSS 3.1 with high attack complexity. The write is almost entirely fixed (the first byte is controllable, the next four bits, and the rest is constant), so Calif reach for the classic move of overwriting an adjacent buffer's length field. A buffer whose length has been corrupted keeps accepting bytes, which upgrades the fixed write into a bounded, chosen-value write over its neighbour; corrupt a second array's length and read it back through the response and you have a heap-disclosure primitive, a Heartbleed for the Java heap that leaks keys, tokens and other data. From there they repair the objects they damaged to keep the JVM running and escalate into the code cache for execution. None of it is point and shoot: every target needs bespoke heap-grooming profile, and the remote version is sensitive to network timing, to the point that Calif rented a second machine in the same region as the target. That difficulty is real, but it is the kind that erodes once a technique is published.
+Turning the overwrite into RCE is the hard part, and its why the two published scores disagree: Calif put it at 9.2 on CVSS 4.0, the OpenJDK advisory at 8.1 on CVSS 3.1 with high attack complexity. The write you get is almost entirely fixed. Of the 64 bytes, the first is fully attacker-controlled, the next carries four controlled bits, and the remaining 62 are constant, the high ones always `0x9a`. You do not get to write an address of your choosing; what you control is mostly where the write lands, not what it contains, and that is the gap between a crash and a working exploit.
+
+The way across that gap, per Calif, is the length-field overwrite, an old move from browser exploitation. You arrange for the decoder's output buffer to sit just before an array whose length field falls inside the spill, and the fixed write clobbers that length. An array that now believes it is enormous keeps reading and writing far past its real end, which turns the single fixed spill into a bounded, chosen-value linear write; Calif call that array the writer. Do the same to a second array whose contents come back in a response and you have a read, the reader, a Heartbleed for the Java heap that leaks keys, tokens and whatever else is resident, before a single instruction of attacker code has run. They name that stage JavaBleed. From the writer and the reader they repair the objects the spill damaged so the JVM does not crash, then grow the bounded write into the HotSpot code cache and reach execution.
+
+None of this is point and shoot. There is no universal payload: every target needs its own grooming profile, because the layout depends on the application's allocation pattern, on how the G1 collector hands out regions, and on the thread-local buffer each request writes into. The remote version is sensitive to round-trip time and jitter, enough that Calif rented a second machine in the same region as the target to steady it. That difficulty is what the 8.1 is measuring, and it is real. It is also the kind that erodes: the first reliable chain is expensive, and once the technique is written down the next one is cheaper.
+
+## Where it bites, and where it stalls
+
+Who is actually exposed comes down to whether an attacker can get the malformed string to the decoder and groom the heap around it, and a few ordinary things move that line. A proxy or server that buffers the whole request body before passing it on takes away the timing some grooming profiles lean on, and nginx buffers request bodies by default, so a good deal of traffic is shaped against the attacker without anyone deciding it should be.
+
+That is not a control to rely on. Calif point out that Elasticsearch works from a single complete request, so buffering does not disturb its chain, and that once a connection has been upgraded to a WebSocket the later frames tunnel straight through and body buffering stops applying. Any path that streams, or that decodes Base64 from somewhere other than a buffered body, a header, a token, a form field, is still in range.
+
+So the honest reading of the risk has three steps, not one. Triggering the corruption is trivial, the `AAAA...A=` string does it from any decode call. Turning it into a crash or a heap leak is harder but well within reach. A reliable, repeatable RCE against a named product is real engineering, done per target. That is why the first thing you are likely to see in the wild is scanners and leak proofs rather than mass exploitation, and its also why waiting is the wrong read: JavaBleed on its own, a quiet read of heap memory, already exposes the keys and tokens most Java services keep resident.
 
 ## What to do
 
@@ -44,11 +56,28 @@ The fix is the November 2026 Critical Patch Update for your JDK. The bug affects
 grep -m1 '^flags' /proc/cpuinfo | tr ' ' '\n' | grep -E '^(avx512f|avx512bw|avx512vbmi|bmi2)$'
 ```
 
-All four flags present means you are in range. If you cannot apply the update today, start the JVM with `-XX:-UseBASE64Intrinsics` to drop the hardware-accelerated path, or `-XX:UseAVX=2` on x86-64 to turn AVX-512 off; either one takes you off the vulnerable code. Calif publish a bounded, self-contained trigger that keeps every write inside a 4096-byte array and prints whether your runtime is affected, so you can tell without putting a live service at risk.
+All four flags present means you are in range. If you cannot apply the update today, start the JVM with `-XX:-UseBASE64Intrinsics` to drop the hardware-accelerated path, or `-XX:UseAVX=2` on x86-64 to turn AVX-512 off; either one takes you off the vulnerable code.
+
+Calif publish a bounded, self-contained trigger that keeps every write inside a 4096-byte array, so you can tell whether a runtime is affected without putting a live service at risk. The shape of it is short enough to show. Warm the decoder so the JIT installs the intrinsic, then decode the malformed input into an oversized array and look at what moved past offset 50:
+
+```java
+Base64.Decoder d = Base64.getDecoder();
+byte[] good = "A".repeat(64).getBytes();
+byte[] bad  = ("A".repeat(64) + "=").getBytes();
+byte[] out  = new byte[4096];
+for (int i = 0; i < 200_000; i++) d.decode(good, out); // reach the C2 intrinsic
+java.util.Arrays.fill(out, (byte) 0x5a);
+try { d.decode(bad, out); } catch (IllegalArgumentException expected) {}
+// on an affected JDK, 62 bytes at offsets 50..111 are no longer 0x5a
+```
+
+Every write stays inside the 4096-byte array, so it is safe to run; on a patched JDK nothing past offset 50 changes. The full version, with the counting and the runtime print, is in Calif's write-up.
 
 ## The lesson
 
 The thing worth keeping is the boundary. "Java is memory-safe" is true of your code and of the managed heap, and it stops being the whole story the moment the JIT swaps in an intrinsic, because from there you are running assembly that is only as safe as the assembly. You will not find this by reading your own source, which is a plain `Base64.getDecoder().decode(s)` with nothing wrong with it, and that is exactly why the fix is a runtime upgrade rather then a dependency bump. Calif make a wider point worth repeating as theirs: the AVX-512 Base64 path exists for the few applications that decode very large volumes, and every other application ships and runs it anyway. For a shared runtime, the useful question is less "what can we add" than "what can we turn off", and the two mitigation flags above are a version of that you can run this afternoon.
+
+One last thing earns a mention, because it is the other half of the story. Calif found this by pointing an AI agent at the JIT, the intrinsics and the crypto code, and the find took around an hour of prompting and discarding dead ends. That is a bug in one of the most-read codebases in the industry, in CPU-specific assembly almost nobody reads for pleasure, surfaced cheaply by something that does not get bored halfway down the function. Whatever you make of the branding around these disclosures, the signal is hard to miss: the low-level, under-reviewed corners of mature projects are about to get a great deal more attention, and not only from the people who patch them.
 
 ## References
 
