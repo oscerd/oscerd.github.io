@@ -27,6 +27,8 @@ Java's memory safety is a property of bytecode over the managed heap, and the JI
 
 The lesson is the boundary: "Java is memory-safe" describes your bytecode, not the native intrinsic the JIT swaps in underneath it, and you will not find this by reading your own `Base64.getDecoder().decode(s)`. The fix is a runtime upgrade, the November 2026 CPU, not a dependency bump; if you cannot apply it at once, `-XX:-UseBASE64Intrinsics` or `-XX:UseAVX=2` on x86-64 takes you off the vulnerable path. It affects OpenJDK 17.0.6 and later on AVX-512 VBMI CPUs; 8 and 11 are not affected.
 
+I go through the mask logic, the exploitation path and a proof of concept in a separate write-up: [Java4Shell: memory corruption in OpenJDK's Base64 decoder](/2026/11/18/java4shell-openjdk-base64-memory-corruption.html){:target="_blank"}.
+
 ## Apache Shiro: authentication has to fail closed
 
 Shiro is a security framework for Java applications: it authenticates a subject, authorizes what that subject can do, manages the session and handles the crypto underneath. This week it published eight advisories, fixed across 3.0.1 and 3.0.2, and the two that carry the lesson are both about a credential check that produces "authenticated" without having verified anything.
@@ -62,6 +64,7 @@ Third, briefly, because I noted it last week too: AI turned up on both sides aga
 - [OpenJDK Vulnerability Advisory: 2026/11/17](https://openjdk.org/groups/vulnerability/advisories/2026-11-17){:target="_blank"} - OpenJDK Vulnerability Group
 - [Oracle Critical Patch Update Advisory, November 2026](https://www.oracle.com/security-alerts/cspunov2026.html){:target="_blank"} - Oracle
 - [CVE-2026-114938](https://www.cve.org/CVERecord?id=CVE-2026-114938){:target="_blank"} - CVE.org
+- [Java4Shell: memory corruption in OpenJDK's Base64 decoder](/2026/11/18/java4shell-openjdk-base64-memory-corruption.html){:target="_blank"} - oscerd.github.io
 - [oss-security: CVE-2026-129349 Apache Shiro DefaultLdapRealm accepts any password when caching enabled](https://www.openwall.com/lists/oss-security/2026/11/14/8){:target="_blank"} - Openwall oss-security
 - [oss-security: CVE-2026-129347 Apache Shiro empty stored credential matches empty password](https://www.openwall.com/lists/oss-security/2026/11/14/6){:target="_blank"} - Openwall oss-security
 - [oss-security: CVE-2026-114737 Apache Shiro case-insensitive path matching default](https://www.openwall.com/lists/oss-security/2026/11/14/1){:target="_blank"} - Openwall oss-security
